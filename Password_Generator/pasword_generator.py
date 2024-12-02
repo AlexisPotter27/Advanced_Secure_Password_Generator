@@ -8,8 +8,8 @@ def calculate_entropy(length, pool_size):
     return math.log2(pool_size ** length)
 
 
-def generate_advanced_password(length=16, use_upper=True, use_lower=True, use_digits=True,
-                               use_special=True, exclude_chars=""):
+def generate_advanced_password(length = 16, use_upper = True, use_lower = True, use_digits = True,
+                               use_special = True, exclude_chars = ""):
     """
     Generate a secure password with customizable options.
 
@@ -44,6 +44,7 @@ def generate_advanced_password(length=16, use_upper=True, use_lower=True, use_di
 
     # Ensure at least one character from each enabled pool
     password = []
+
     if use_upper:
         password.append(secrets.choice(string.ascii_uppercase.replace(exclude_chars, "")))
     if use_lower:
@@ -67,7 +68,7 @@ def generate_advanced_password(length=16, use_upper=True, use_lower=True, use_di
 
 # Example Usage:
 length = 20
-password, entropy = generate_advanced_password(length=length, use_upper=True, use_lower=True,
-                                               use_digits=True, use_special=True, exclude_chars="lI1O0")
+password, entropy = generate_advanced_password(length = length, use_upper = True, use_lower = True,
+                                               use_digits = True, use_special = True, exclude_chars = "lI1O0")
 print(f"Generated Secure Password: {password}")
 print(f"Password Entropy: {entropy:.2f} bits")
