@@ -8,7 +8,7 @@ def calculate_entropy(length, pool_size):
     return math.log2(pool_size ** length)
 
 
-def generate_advanced_password(length = 16, use_upper = True, use_lower = True, use_digits = True,
+def generate_advanced_password(length = 10, use_upper = True, use_lower = True, use_digits = True,
                                use_special = True, exclude_chars = ""):
     """
     Generate a secure password with customizable options.
